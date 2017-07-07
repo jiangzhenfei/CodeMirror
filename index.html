@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <!-- 任何配色都需要引入的css文件 -->
+    <link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css">
+
+    <!-- 各种主题配色 -->
+    <link rel="stylesheet" href="node_modules/codemirror/theme/monokai.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/3024-day.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/3024-night.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/abcdef.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/ambiance.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/base16-dark.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/bespin.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/base16-light.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/blackboard.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/cobalt.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/colorforth.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/dracula.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/duotone-dark.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/duotone-light.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/eclipse.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/elegant.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/erlang-dark.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/hopscotch.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/icecoder.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/isotope.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/lesser-dark.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/liquibyte.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/material.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/mbo.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/mdn-like.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/midnight.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/monokai.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/neat.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/neo.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/night.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/panda-syntax.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/paraiso-dark.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/paraiso-light.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/pastel-on-dark.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/railscasts.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/rubyblue.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/seti.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/solarized.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/the-matrix.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/tomorrow-night-bright.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/ttcn.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/twilight.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/vibrant-ink.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/xq-dark.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/xq-light.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/yeti.css">
+    <link rel="stylesheet" href="node_modules/codemirror/theme/zenburn.css">
+
+    <!-- 引入插件 -->
+    <script src="node_modules/codemirror/lib/codemirror.js"></script>
+    <!-- 引入javascript编辑器格式 -->
+    <script src="node_modules/codemirror/mode/javascript/javascript.js"></script>
+    
+    
+    
+</head>
+<style type="text/css">
+      .CodeMirror {border: 1px solid black; font-size:13px;border-radius: 5px}
+</style>
+<body>
+    <h2>Theme Demo</h2>
+    <textarea id="code" name="code">
+        
+    </textarea>
+    <p>Select a theme: <select onchange="selectTheme()" id=select>
+        <option selected>default</option>
+        <option>3024-day</option>
+        <option>3024-night</option>
+        <option>abcdef</option>
+        <option>ambiance</option>
+        <option>base16-dark</option>
+        <option>base16-light</option>
+        <option>bespin</option>
+        <option>blackboard</option>
+        <option>cobalt</option>
+        <option>colorforth</option>
+        <option>dracula</option>
+        <option>duotone-dark</option>
+        <option>duotone-light</option>
+        <option>eclipse</option>
+        <option>elegant</option>
+        <option>erlang-dark</option>
+        <option>hopscotch</option>
+        <option>icecoder</option>
+        <option>isotope</option>
+        <option>lesser-dark</option>
+        <option>liquibyte</option>
+        <option>material</option>
+        <option>mbo</option>
+        <option>mdn-like</option>
+        <option>midnight</option>
+        <option>monokai</option>
+        <option>neat</option>
+        <option>neo</option>
+        <option>night</option>
+        <option>panda-syntax</option>
+        <option>paraiso-dark</option>
+        <option>paraiso-light</option>
+        <option>pastel-on-dark</option>
+        <option>railscasts</option>
+        <option>rubyblue</option>
+        <option>seti</option>
+        <option>solarized dark</option>
+        <option>solarized light</option>
+        <option>the-matrix</option>
+        <option>tomorrow-night-bright</option>
+        <option>tomorrow-night-eighties</option>
+        <option>ttcn</option>
+        <option>twilight</option>
+        <option>vibrant-ink</option>
+        <option>xq-dark</option>
+        <option>xq-light</option>
+        <option>yeti</option>
+        <option>zenburn</option>
+    </select>
+    </p>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+            lineNumbers: true,
+            styleActiveLine: true,
+            matchBrackets: true,
+            readOnly:true
+        });
+        var obj ={
+           "message": "",
+           "code": 200,
+           "response": {
+                "totalCount": 1,
+                "results": [
+                    {
+                        "status": "deployed",
+                        "login_port": 22,
+                        "role_info": null,
+                        "created": "2017-06-19 09:58:04",
+                        "login_user": "root",
+                        "hostname": "deploy-226",
+                        "login_ip": "172.24.6.226",
+                        "id": "1147edbde1494df696019fdb094be43d"
+                    }
+                ],
+                "pageSize": 5,
+                "page": 1
+            },
+            "success": true
+        }
+        
+        setTimeout(function(){
+            editor.setValue(JSON.stringify(obj,null,4))
+        },2000)
+
+        var input = document.getElementById("select");
+        function selectTheme() {
+            var theme = input.options[input.selectedIndex].textContent;
+            editor.setOption("theme", theme);
+        }
+        
+    </script>
+</body>
+</html>
